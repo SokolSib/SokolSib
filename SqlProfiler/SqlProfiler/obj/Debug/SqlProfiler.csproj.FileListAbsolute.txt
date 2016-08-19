@@ -1,0 +1,8 @@
+E:\SokolSib\SqlProfiler\SqlProfiler\bin\Debug\SqlProfiler.dll
+E:\SokolSib\SqlProfiler\SqlProfiler\bin\Debug\SqlProfiler.pdb
+E:\SokolSib\SqlProfiler\SqlProfiler\bin\Debug\MiniProfiler.dll
+E:\SokolSib\SqlProfiler\SqlProfiler\bin\Debug\MiniProfiler.pdb
+E:\SokolSib\SqlProfiler\SqlProfiler\bin\Debug\MiniProfiler.xml
+E:\SokolSib\SqlProfiler\SqlProfiler\obj\Debug\SqlProfiler.csprojResolveAssemblyReference.cache
+E:\SokolSib\SqlProfiler\SqlProfiler\obj\Debug\SqlProfiler.dll
+E:\SokolSib\SqlProfiler\SqlProfiler\obj\Debug\SqlProfiler.pdb
