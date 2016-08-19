@@ -7,7 +7,7 @@ namespace SqlProfiler
     /// <summary>
     ///     Profiled connection.
     /// </summary>
-    public class DbProfilerConnection
+    public class DbProfilerConnection : IDbConnection
     {
         /// <summary>
         ///     Declare the delegate for event.
@@ -31,18 +31,68 @@ namespace SqlProfiler
         /// <param name="dbProfilerEvent">Profiler event.</param>
         public DbProfilerConnection(IDbConnection connection, ProfilerEventHandler dbProfilerEvent)
         {
-            _connection = connection;
             _profiler.DbProfilerEvent += dbProfilerEvent;
+            _connection = new ProfiledDbConnection((DbConnection) connection, _profiler);
         }
 
-        /// <summary>
-        ///     Create profiled connection.
-        /// </summary>
-        /// <param name="connectionString">Connection string.</param>
-        /// <returns>Standart connection.</returns>
-        public IDbConnection CreateConnection(string connectionString = null)
+        #region IDbConnection members
+
+        public void Dispose()
         {
-            return new ProfiledDbConnection((DbConnection) _connection, _profiler);
+            _connection.Dispose();
         }
+
+        public IDbTransaction BeginTransaction()
+        {
+            return _connection.BeginTransaction();
+        }
+
+        public IDbTransaction BeginTransaction(IsolationLevel il)
+        {
+            return _connection.BeginTransaction(il);
+        }
+
+        public void Close()
+        {
+            _connection.Close();
+        }
+
+        public void ChangeDatabase(string databaseName)
+        {
+            _connection.ChangeDatabase(databaseName);
+        }
+
+        public IDbCommand CreateCommand()
+        {
+            return _connection.CreateCommand();
+        }
+
+        public void Open()
+        {
+            _connection.Open();
+        }
+
+        public string ConnectionString
+        {
+            get { return _connection.ConnectionString; }
+            set { _connection.ConnectionString = value; }
+        }
+
+        public int ConnectionTimeout
+        {
+            get { return _connection.ConnectionTimeout; }
+        }
+
+        public string Database
+        {
+            get { return _connection.Database; }
+        }
+
+        public ConnectionState State
+        {
+            get { return _connection.State; }
+        }
+
+        #endregion
     }
 }

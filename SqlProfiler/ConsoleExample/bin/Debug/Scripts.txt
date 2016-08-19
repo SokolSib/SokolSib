@@ -87,3 +87,11 @@ CommandType: Text, CommandText: SELECT count(*) FROM information_schema.tables W
 Parameters:
 @tableSchema = dbo
 
+CommandType: Text, CommandText: SELECT count(*) FROM information_schema.tables WHERE TABLE_SCHEMA = @tableSchema
+Parameters:
+@tableSchema = dbo
+
+CommandType: Text, CommandText: SELECT count(*) FROM information_schema.tables WHERE TABLE_SCHEMA = @tableSchema
+Parameters:
+@tableSchema = dbo
+

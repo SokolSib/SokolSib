@@ -15,10 +15,9 @@ namespace ConsoleExample
             try
             {
                 var connectionString = ConfigurationManager.ConnectionStrings["MsSqlConnection"].ToString();
-                var profiledConnection = new DbProfilerConnection(new SqlConnection(connectionString), ProfilerEvent);
 
                 int countOfRowsInTable;
-                using (var connection = profiledConnection.CreateConnection())
+                using (var connection = new DbProfilerConnection(new SqlConnection(connectionString), ProfilerEvent))
                 {
                     connection.Open();
                     using (var command = connection.CreateCommand())
