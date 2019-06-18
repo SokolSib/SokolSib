@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b76bb5bc7f9b46848c09f4f8dbbaf147" Name="Diagram1">
+        <EntityTypeShape EntityType="animalsModel.AnimalColors" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="animalsModel.Animals" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="animalsModel.AnimalTypeColors" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="animalsModel.AnimalTypes" Width="1.5" PointX="0.75" PointY="5.25" />
+        <EntityTypeShape EntityType="animalsModel.Locations" Width="1.5" PointX="3" PointY="8.125" />
+        <EntityTypeShape EntityType="animalsModel.Regions" Width="1.5" PointX="0.75" PointY="8.375" />
+        <AssociationConnector Association="animalsModel.FK_AnimalTypeColors_AnimalColors" />
+        <AssociationConnector Association="animalsModel.FK_Animals_AnimalTypeColors" />
+        <AssociationConnector Association="animalsModel.FK_Animals_Locations" />
+        <AssociationConnector Association="animalsModel.FK_AnimalTypeColors_AnimalTypes" />
+        <AssociationConnector Association="animalsModel.FK_Locations_Regions" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
