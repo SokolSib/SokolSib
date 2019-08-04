@@ -12,6 +12,9 @@ namespace Animals.Service
 {
     public class Program
     {
+        /// <summary>
+        /// Стартовая точка программы
+        /// </summary>
         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();
